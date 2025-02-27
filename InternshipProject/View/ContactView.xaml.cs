@@ -1,20 +1,23 @@
-﻿using System.Windows.Controls;
-using InternshipProject.Model;
+﻿using System.Windows;
+using System.Windows.Controls;
 using InternshipProject.ViewModel;
 
-namespace InternshipProject.View;
-
-public partial class ContactView : UserControl
+namespace InternshipProject.View
 {
-    public ContactView()
+    public partial class ContactView : UserControl
     {
-        InitializeComponent();
-        
-        ContactViewModel viewModel = new ContactViewModel();
-        var contacts = viewModel.Contacts;
-        Console.WriteLine(contacts.Count);
-        // DataContext = contacts.Count;
-        
-       
+        private ContactViewModel viewModel;
+
+        public ContactView()
+        {
+            InitializeComponent();
+            viewModel = new ContactViewModel();
+            DataContext = viewModel;
+        }
+
+        private void AddContactButton_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.AddContact();
+        }
     }
 }

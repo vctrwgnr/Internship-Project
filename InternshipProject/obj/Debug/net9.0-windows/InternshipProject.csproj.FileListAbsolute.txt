@@ -20,3 +20,4 @@ C:\Users\VictoriaEmich\RiderProjects\InternshipProject\InternshipProject\obj\Deb
 C:\Users\VictoriaEmich\RiderProjects\InternshipProject\InternshipProject\obj\Debug\net9.0-windows\ref\InternshipProject.dll
 C:\Users\VictoriaEmich\RiderProjects\InternshipProject\InternshipProject\obj\Debug\net9.0-windows\View\ContactView.g.cs
 C:\Users\VictoriaEmich\RiderProjects\InternshipProject\InternshipProject\obj\Debug\net9.0-windows\View\ContactView.baml
+C:\Users\VictoriaEmich\RiderProjects\InternshipProject\InternshipProject\obj\Debug\net9.0-windows\InternshipProject.sourcelink.json

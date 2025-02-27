@@ -1,16 +1,74 @@
-﻿namespace InternshipProject.Model;
+﻿using System.ComponentModel;
+namespace InternshipProject.Model;
 
-public class Contact(int id, string fname, string lname, string email, string phone)
+public class Contact : INotifyPropertyChanged
 {
- 
-    public int Id { get; set; } = id;
-    public string Fname { get; set; } = fname;
-    public string Lname { get; set; } = lname;
-    public string Email { get; set; } = email;
-    public string Phone { get; set; } = phone;
+    private string fname;
+    private string lname;
+    private string email;
+    private string phone;
 
-    public override string ToString()
+    public string FirstName
     {
-        return Fname + " " + Lname;
+        get
+        {
+            return fname;
+        }
+        set
+        {
+            fname = value;
+            OnPropertyChanged("FirstName");
+        }
     }
+    public string LastName
+    {
+        get
+        {
+            return lname;
+        }
+        set
+        {
+            lname = value;
+            OnPropertyChanged("LastName");
+        }
+    }
+    public string Email
+    {
+        get
+        {
+            return email;
+        }
+        set
+        {
+            email = value;
+            OnPropertyChanged("Email");
+        }
+    }
+    public string Phone
+    {
+        get
+        {
+            return phone;
+        }
+        set
+        {
+            phone = value;
+            OnPropertyChanged("Phone");
+        }
+    }
+    
+    
+    #region INotifyPropertyChanged Members
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    private void OnPropertyChanged(string propertyName)
+    {
+        if (PropertyChanged != null)
+        {
+            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+    #endregion
+
 }
